@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace Poliklinika_program
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("User name:");
+            var UserName = Console.ReadLine();
+            Console.WriteLine("PassWord:");
+            var PassWord = Console.ReadLine();
+            if (UserName == "admin" && PassWord == "admin")
+            {
+                Console.WriteLine("Davam etmek ucun 1 duymesine basin");
+                var count = Convert.ToInt32(Console.ReadLine());
+
+                if (count == 1)
+                {
+                    Console.WriteLine("Hisseler:");
+                    Console.WriteLine("1.Sobeler");
+                    Console.WriteLine("2.Hekimler");
+                }
+                else
+                {
+                    Console.WriteLine("Duzgun secim edin:");
+                }
+            }
+            else
+            {
+                Console.WriteLine("UserName ve ya  PassWord duzgun deyil");
+            }
+            for (int i = 0; i < 30; i++)
+            {
+                var count = Convert.ToInt32(Console.ReadLine());
+                if (count == 1)
+                {
+                    Console.WriteLine("Sobeler:\n");
+                    List<string> Sobeler = new List<string>();
+                    Sobeler.Add("1: Kordiologiya");
+                    Sobeler.Add("2: Ginekologiya");
+                    Sobeler.Add("3: Nevrologiya");
+                    Sobeler.Add("4: Urologiya");
+                    foreach (var goster in Sobeler)
+                    {
+                        Console.WriteLine(goster);
+                    }
+                    Console.WriteLine("Deyisiklik etmek ucun 0 duymesine basin");
+                    var count5 = Convert.ToInt32(Console.ReadLine());
+                    if (count5 == 0)
+                    {
+                        Console.WriteLine("deyisiklik edin");
+                        foreach (var item in Sobeler)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Sobeler.Add(Console.ReadLine());
+
+                        foreach (var item2 in Sobeler)
+                        {
+                            Console.WriteLine(item2);
+                        }
+                        Console.WriteLine("-----------------");
+                        Console.WriteLine("Deysikilik Edildi");
+
+                        Console.WriteLine("Esas menyuya qayitmaq ucun 1 duymesine basin");
+                        var count1 = Convert.ToInt32(Console.ReadLine());
+                        if (count1 == 1)
+                        {
+                            Console.WriteLine("Hisseler:");
+                            Console.WriteLine("1.Sobeler");
+                            Console.WriteLine("2.Hekimler");
+                        }                     
+                    }
+                    else if (count5 == 1)
+                    {
+                        Console.WriteLine("Hisseler:");
+                        Console.WriteLine("1.Sobeler");
+                        Console.WriteLine("2.Hekimler");
+                    }
+                }
+                else if (count == 2)
+                {
+                    ArrayList Hekimler = new ArrayList();
+                    Hekimler.Add("1: Kordiologiya Hekimi - ID: 101001");
+                    Hekimler.Add("2: Ginekologiya Hekimi - ID: 101002");
+                    Hekimler.Add("3: Nevrologiya Hekimi  - ID: 101003");
+                    Hekimler.Add("4: Urologiya Hekimi    - ID: 101004");
+                    foreach (var hGoster in Hekimler)
+                    {
+                        Console.WriteLine(hGoster);
+                    }
+                }
+            }
+        }
+    }
+}
